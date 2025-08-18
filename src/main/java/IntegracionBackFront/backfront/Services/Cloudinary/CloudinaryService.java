@@ -111,7 +111,7 @@ public class CloudinaryService {
         }
 
         //Verifica el tipo de MIME sea una imagen
-        if (!file.getContentType().startsWith("imagen/")){
+        if (!file.getContentType().startsWith("image/")){
             throw new IllegalArgumentException("El archivo dede ser una imagen válida");
         }
     }
