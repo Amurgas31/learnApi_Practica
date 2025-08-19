@@ -56,6 +56,7 @@ public class ProductService {
         productoExistente.setFechaIngreso(json.getFechaIngreso());
         productoExistente.setCategoriaId(json.getCategoriaId());
         productoExistente.setUsuarioId(json.getUsuarioId());
+        productoExistente.setImagen_url(json.getImagen_url());
         //3. Actualización del registro
         ProductEntity productoActualizado = repo.save(productoExistente);
         //4. Convertir a DTO
