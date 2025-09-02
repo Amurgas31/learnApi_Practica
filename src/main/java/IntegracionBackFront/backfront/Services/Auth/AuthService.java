@@ -21,6 +21,12 @@ public class AuthService {
         if (list.isPresent()){
             UserEntity usuario = list.get();
             String nombreTipoUsuario = usuario.getTipoUsuario().getNombreTipo();
+            System.out.println("Usuario encontrado ID: " + usuario.getId() +
+                    ", email: " + usuario.getCorreo() +
+                    ", rol: " + nombreTipoUsuario);
+            String HashBD = usuario.getContrasena();
+            return objHash.VerifyPassword(HashBD, contrasena);
         }
+        return false;
     }
 }

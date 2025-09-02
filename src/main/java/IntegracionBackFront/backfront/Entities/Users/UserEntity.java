@@ -37,4 +37,17 @@ public class UserEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "IDTIPOUSUARIO", referencedColumnName = "IDTIPOUSUARIO")
     private UserTypeEntity tipoUsuario;
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correo='" + correo + '\'' +
+                ", contrasena='" + contrasena + '\'' +
+                ", fechaRegistro=" + fechaRegistro +
+                ", tipoUsuario=" + tipoUsuario +
+                '}';
+    }
 }
