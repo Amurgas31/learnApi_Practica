@@ -1,0 +1,26 @@
+package IntegracionBackFront.backfront.Services.Auth;
+
+import IntegracionBackFront.backfront.Config.Crypto.Argon2Password;
+import IntegracionBackFront.backfront.Entities.Users.UserEntity;
+import IntegracionBackFront.backfront.Repositories.Users.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class AuthService {
+    @Autowired
+    private UserRepository repo;
+
+    public boolean Login(String correo, String contrasena){
+        //Crear el onjeto de tipo Argon2
+        Argon2Password objHash = new Argon2Password();
+        //Invocar un metodo que permita buscar al usuario por su correo
+        Optional<UserEntity> list = repo.findByCorreo(correo).stream().findFirst();
+        if (list.isPresent()){
+            UserEntity usuario = list.get();
+            String nombreTipoUsuario = usuario.getTipoUsuario().getNombreTipo();
+        }
+    }
+}
